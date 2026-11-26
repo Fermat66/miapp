@@ -1,12 +1,13 @@
-# Archivo científico · Versión de prueba
+# Archivo científico
 
-Página web estática con las publicaciones de **José Miguel Serradilla Merinero**.
+Página de prueba con publicaciones reales y ficticias de José Miguel Serradilla Merinero.
 
-> **Aviso:** diez publicaciones añadidas en esta versión son ficticias y se incorporaron únicamente para probar el diseño y las funciones de filtrado.
+Incluye:
+- Estadísticas generales
+- Gráfico de publicaciones por año
+- Distribución visual por área temática
+- Indicadores de colaboración
+- Filtros por área
+- Tarjetas bibliográficas
 
-## Publicar con GitHub Pages
-
-1. Abre **Settings** del repositorio.
-2. Entra en **Pages**.
-3. En **Build and deployment**, selecciona **Deploy from a branch**.
-4. Elige la rama `main` y la carpeta `/ (root)`.
+> Las diez entradas ficticias están marcadas expresamente como "Ficticio".
