@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Publicaciones científicas de José Miguel Serradilla Merinero" />
+  <title>José Miguel Serradilla Merinero · Publicaciones</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap" rel="stylesheet">
+  <style>
+    :root { --ink:#17231d; --paper:#f4f1e8; --white:#fffef9; --green:#215b43; --lime:#c8d6a2; --line:#cfd3c5; --orange:#d87b45; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; background:var(--paper); color:var(--ink); font-family:"Manrope",sans-serif; }
+    body::before { content:""; position:fixed; inset:0; pointer-events:none; opacity:.18; z-index:20; background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.13'/%3E%3C/svg%3E"); }
+    .shell { max-width:1240px; margin:auto; padding:0 32px; }
+    nav { height:82px; display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid var(--line); }
+    .brand { display:flex; align-items:center; gap:12px; font-family:"DM Mono",monospace; font-size:12px; text-transform:uppercase; letter-spacing:.12em; }
+    .brand-mark { width:36px; height:36px; border:1px solid var(--green); border-radius:50%; display:grid; place-items:center; background:var(--lime); font-family:"Newsreader",serif; font-size:18px; }
+    .nav-links { display:flex; gap:28px; }
+    .nav-links a { color:var(--ink); text-decoration:none; font-size:13px; font-weight:700; }
+    .hero { min-height:390px; display:grid; grid-template-columns:1.35fr .65fr; align-items:end; gap:40px; padding:76px 0 54px; }
+    .eyebrow { display:flex; align-items:center; gap:10px; font-family:"DM Mono",monospace; font-size:11px; text-transform:uppercase; letter-spacing:.16em; color:var(--green); }
+    .eyebrow::before { content:""; width:34px; height:1px; background:var(--green); }
+    h1 { max-width:850px; margin:18px 0 20px; font-family:"Newsreader",serif; font-size:clamp(54px,7vw,92px); line-height:.89; letter-spacing:-.045em; font-weight:600; }
+    .hero-copy { max-width:620px; color:#526057; line-height:1.75; font-size:15px; }
+    .profile { justify-self:end; width:210px; height:210px; border-radius:50%; background:var(--green); position:relative; overflow:hidden; box-shadow:18px 18px 0 var(--lime); }
+    .profile::before { content:"JMS"; position:absolute; inset:0; display:grid; place-items:center; color:var(--lime); font-family:"Newsreader",serif; font-size:58px; letter-spacing:-.05em; }
+    .profile::after { content:""; position:absolute; width:90px; height:90px; border:1px solid rgba(255,255,255,.35); border-radius:50%; right:-20px; bottom:-18px; }
+    .stats { display:grid; grid-template-columns:repeat(4,1fr); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+    .stat { padding:24px 20px 22px; border-right:1px solid var(--line); }
+    .stat:last-child { border-right:0; }
+    .stat strong { display:block; font-family:"Newsreader",serif; font-size:42px; line-height:1; }
+    .stat span { display:block; margin-top:8px; color:#69756e; font-family:"DM Mono",monospace; font-size:10px; text-transform:uppercase; letter-spacing:.12em; }
+    main { padding:70px 0 100px; }
+    .section-head { display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:28px; }
+    h2 { margin:0; font-family:"Newsreader",serif; font-size:44px; letter-spacing:-.03em; }
+    .filters { display:flex; gap:8px; }
+    .filter { border:1px solid var(--line); background:transparent; border-radius:999px; padding:9px 13px; color:var(--ink); cursor:pointer; font-family:"DM Mono",monospace; font-size:10px; text-transform:uppercase; }
+    .filter.active { background:var(--ink); color:white; border-color:var(--ink); }
+    .chart-card { background:var(--white); border:1px solid var(--line); margin-bottom:38px; padding:28px 32px 20px; }
+    .chart-title { display:flex; justify-content:space-between; font-family:"DM Mono",monospace; font-size:10px; text-transform:uppercase; letter-spacing:.12em; }
+    .chart { height:190px; display:flex; align-items:flex-end; gap:18px; padding:24px 0 22px; border-bottom:1px solid var(--line); }
+    .bar-wrap { flex:1; height:100%; display:flex; flex-direction:column; justify-content:flex-end; align-items:center; gap:8px; }
+    .bar { width:min(58px,70%); height:var(--h); background:var(--green); border-radius:3px 3px 0 0; position:relative; transition:.35s ease; }
+    .bar:hover { background:var(--orange); transform:translateY(-4px); }
+    .bar-value { position:absolute; top:-23px; width:100%; text-align:center; font-family:"DM Mono",monospace; font-size:10px; }
+    .bar-label { font-family:"DM Mono",monospace; font-size:10px; color:#69756e; }
+    .grid { display:grid; grid-template-columns:repeat(2,1fr); gap:18px; }
+    .article { background:var(--white); border:1px solid var(--line); min-height:260px; padding:30px; display:flex; flex-direction:column; transition:.25s ease; }
+    .article:hover { transform:translateY(-4px); box-shadow:0 14px 32px rgba(23,35,29,.08); border-color:#aab7a7; }
+    .article-top { display:flex; justify-content:space-between; align-items:center; }
+    .year { font-family:"DM Mono",monospace; font-size:11px; color:var(--green); }
+    .area { border:1px solid var(--line); border-radius:999px; padding:6px 9px; font-family:"DM Mono",monospace; font-size:9px; text-transform:uppercase; }
+    .article h3 { margin:24px 0 12px; font-family:"Newsreader",serif; font-size:28px; line-height:1.08; }
+    .journal { color:#69756e; font-size:12px; line-height:1.5; }
+    .authors { margin-top:auto; padding-top:20px; color:#526057; font-size:11px; }
+    .link-row { display:flex; justify-content:space-between; align-items:center; margin-top:18px; border-top:1px solid var(--line); padding-top:16px; }
+    .link-row a { color:var(--ink); text-decoration:none; font-size:11px; font-weight:700; }
+    .arrow { width:34px; height:34px; border:1px solid var(--line); border-radius:50%; display:grid; place-items:center; transition:.2s; }
+    .article:hover .arrow { background:var(--lime); }
+    footer { border-top:1px solid var(--line); padding:34px 0 42px; }
+    .footer-inner { display:flex; justify-content:space-between; color:#69756e; font-family:"DM Mono",monospace; font-size:10px; text-transform:uppercase; letter-spacing:.08em; }
+    @media (max-width:800px) { .shell { padding:0 20px; } .nav-links { display:none; } .hero { grid-template-columns:1fr; padding-top:48px; } .profile { display:none; } h1 { font-size:55px; } .stats { grid-template-columns:repeat(2,1fr); } .stat:nth-child(2) { border-right:0; } .stat:nth-child(-n+2) { border-bottom:1px solid var(--line); } .section-head { align-items:flex-start; flex-direction:column; gap:18px; } .grid { grid-template-columns:1fr; } .chart-card { padding:24px 18px 18px; } }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <nav>
+      <div class="brand"><span class="brand-mark">JM</span><span>José Miguel<br>Serradilla Merinero</span></div>
+      <div class="nav-links"><a href="#publicaciones">Publicaciones</a><a href="https://investigacion.unir.net/investigadores/822877/publicaciones?lang=es_ES" target="_blank" rel="noopener">Perfil UNIR ↗</a></div>
+    </nav>
+
+    <header class="hero">
+      <div>
+        <div class="eyebrow">Archivo científico</div>
+        <h1>Ideas, grafos y estructuras.</h1>
+        <p class="hero-copy">Selección de publicaciones de José Miguel Serradilla Merinero en matemática discreta, teoría de grafos, semigrupos numéricos y álgebra computacional.</p>
+      </div>
+      <div class="profile" aria-label="Iniciales JMS"></div>
+    </header>
+
+    <section class="stats" aria-label="Resumen bibliográfico">
+      <div class="stat"><strong>5</strong><span>Publicaciones</span></div>
+      <div class="stat"><strong>4</strong><span>Coautores principales</span></div>
+      <div class="stat"><strong>19</strong><span>Años documentados</span></div>
+      <div class="stat"><strong>2025</strong><span>Última publicación</span></div>
+    </section>
+
+    <main id="publicaciones">
+      <div class="section-head">
+        <h2>Publicaciones</h2>
+        <div class="filters" aria-label="Filtrar publicaciones">
+          <button class="filter active" data-filter="all">Todas</button>
+          <button class="filter" data-filter="grafos">Grafos</button>
+          <button class="filter" data-filter="algebra">Álgebra</button>
+        </div>
+      </div>
+
+      <section class="chart-card">
+        <div class="chart-title"><span>Publicaciones por año</span><span>2006—2025</span></div>
+        <div class="chart" aria-label="Gráfico de publicaciones por año">
+          <div class="bar-wrap"><div class="bar" style="--h:26%"><span class="bar-value">1</span></div><span class="bar-label">2006</span></div>
+          <div class="bar-wrap"><div class="bar" style="--h:26%"><span class="bar-value">1</span></div><span class="bar-label">2009</span></div>
+          <div class="bar-wrap"><div class="bar" style="--h:26%"><span class="bar-value">1</span></div><span class="bar-label">2021</span></div>
+          <div class="bar-wrap"><div class="bar" style="--h:26%"><span class="bar-value">1</span></div><span class="bar-label">2022</span></div>
+          <div class="bar-wrap"><div class="bar" style="--h:26%;background:var(--orange)"><span class="bar-value">1</span></div><span class="bar-label">2025</span></div>
+        </div>
+      </section>
+
+      <div class="grid">
+        <article class="article" data-area="algebra">
+          <div class="article-top"><span class="year">2025</span><span class="area">Álgebra</span></div>
+          <h3>Greedy sets and greedy numerical semigroups</h3>
+          <div class="journal">Communications in Algebra · 53(6), 2442–2455</div>
+          <div class="authors">H. Pérez-Rosés · M. Bras-Amorós · J. M. Serradilla-Merinero</div>
+          <div class="link-row"><a href="https://www.tandfonline.com/toc/lagb20/53/6" target="_blank" rel="noopener">Ver publicación</a><span class="arrow">↗</span></div>
+        </article>
+
+        <article class="article" data-area="grafos">
+          <div class="article-top"><span class="year">2022</span><span class="area">Grafos</span></div>
+          <h3>Greedy Routing in Circulant Networks</h3>
+          <div class="journal">Graphs and Combinatorics · 38(3)</div>
+          <div class="authors">H. Pérez-Rosés · M. Bras-Amorós · J. M. Serradilla-Merinero</div>
+          <div class="link-row"><a href="https://link.springer.com/article/10.1007/s00373-022-02501-9" target="_blank" rel="noopener">Ver publicación</a><span class="arrow">↗</span></div>
+        </article>
+
+        <article class="article" data-area="algebra">
+          <div class="article-top"><span class="year">2021</span><span class="area">Álgebra</span></div>
+          <h3>Quasi-ordinarization transform of a numerical semigroup</h3>
+          <div class="journal">Symmetry · 13(6), artículo 1084</div>
+          <div class="authors">M. Bras-Amorós · H. Pérez-Rosés · J. M. Serradilla-Merinero</div>
+          <div class="link-row"><a href="https://www.mdpi.com/2073-8994/13/6/1084" target="_blank" rel="noopener">Ver publicación</a><span class="arrow">↗</span></div>
+        </article>
+
+        <article class="article" data-area="algebra">
+          <div class="article-top"><span class="year">2009</span><span class="area">Álgebra computacional</span></div>
+          <h3>Detecting real singularities of a space curve from a real rational parametrization</h3>
+          <div class="journal">Journal of Symbolic Computation · 44(5), 490–498</div>
+          <div class="authors">R. Rubio · J. M. Serradilla · M. P. Vélez</div>
+          <div class="link-row"><a href="https://www.sciencedirect.com/science/article/pii/S0747717108000970" target="_blank" rel="noopener">Ver publicación</a><span class="arrow">↗</span></div>
+        </article>
+
+        <article class="article" data-area="algebra">
+          <div class="article-top"><span class="year">2006</span><span class="area">Álgebra computacional</span></div>
+          <h3>A note on implicitization and normal parametrization of rational curves</h3>
+          <div class="journal">Proceedings of ISSAC 2006 · 1145768.1145787</div>
+          <div class="authors">R. Rubio · J. M. Serradilla · M. P. Vélez</div>
+          <div class="link-row"><a href="https://dl.acm.org/doi/10.1145/1145768.1145787" target="_blank" rel="noopener">Ver publicación</a><span class="arrow">↗</span></div>
+        </article>
+      </div>
+    </main>
+
+    <footer><div class="footer-inner"><span>José Miguel Serradilla Merinero</span><span>Archivo académico · 2026</span></div></footer>
+  </div>
+
+  <script>
+    const filters = document.querySelectorAll('.filter');
+    const articles = document.querySelectorAll('.article');
+    filters.forEach(button => button.addEventListener('click', () => {
+      filters.forEach(item => item.classList.remove('active'));
+      button.classList.add('active');
+      const filter = button.dataset.filter;
+      articles.forEach(article => {
+        article.style.display = filter === 'all' || article.dataset.area === filter ? 'flex' : 'none';
+      });
+    }));
+  </script>
+</body>
+</html>
